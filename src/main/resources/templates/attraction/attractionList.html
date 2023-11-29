@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+ <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initail-scale=1.0">
+    <!-- REMIX ICONS -->
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{css/attraction.css}">
+
+    <!-- TITLE -->
+    <title>Attraction Page</title>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+    <!--NAV CONTAINER 1-->
+    <nav class="nav container">
+        <a href="/mainPage" class="nav__logo-eng"> <i class="ri-earth-line"></i> Kick The World </a>
+
+        <!-- SEARCH -->
+        <div class="search container">
+            <input type="text" class="search" maxlength="10" placeholder="검색어를 입력해주세요.">
+            <span class="search__icon"><button class="search__button"><i class="ri-search-line"></i></button></span>
+        </div>
+
+        <!--NAV MENU-->
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="/" class="nav__link">blank</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/" class="nav__link">blank</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/" class="nav__link">blank</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/" class="nav__link">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--NAV CONTAINER 2-->
+    <nav class="nav__container-main">
+        <div class="nav__menu" id="nav-menu-main">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="/attractions" class="nav__link"><i class="ri-map-pin-line"></i>갈 곳</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/stays" class="nav__link"><i class="ri-hotel-bed-line"></i>쉴 곳</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/eaterys" class="nav__link"><i class="ri-restaurant-line"></i>먹을 곳</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/boards" class="nav__link"><i class="ri-pencil-line"></i>기록하는 곳</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--NAV CONTAINER 3-->
+<!--    <nav class="nav__container-location">-->
+<!--        <div class="nav__menu" id="nav-menu-location">-->
+<!--            <ul class="nav__list">-->
+<!--                <li class="nav__item">-->
+<!--                    <a href="/attractions" class="nav__link"><i class="ri-map-pin-line"></i>서울</a>-->
+<!--                </li>-->
+<!--                <li class="nav__item">-->
+<!--                    <a href="/stays" class="nav__link"><i class="ri-hotel-bed-line"></i>쉴 곳</a>-->
+<!--                </li>-->
+<!--                <li class="nav__item">-->
+<!--                    <a href="/eaterys" class="nav__link"><i class="ri-restaurant-line"></i>먹을 곳</a>-->
+<!--                </li>-->
+<!--                <li class="nav__item">-->
+<!--                    <a href="/boards" class="nav__link"><i class="ri-pencil-line"></i>기록하는 곳</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </nav>-->
+
+
+
+
+
+
+</header>
+
+
+
+
+<!-- MAIN -->
+<!--<div class="p-5 mb-5 text-center</> bg-light">-->
+<!--    <h1 class="mb-3">Kick The World</h1>-->
+<!--    <h4 class="mb-3">오늘 뭐 하지?</h4>-->
+<!--</div>-->
+
+<!--<div class="container">-->
+<!--    <button type="button" id="create-btn"-->
+<!--            th:onclick="|location.href='@{/newAttraction}'|"-->
+<!--            class="btn btn-secondary btn-sm mb-3">등록</button>-->
+<!--    <div class="row-6" th:each="attraction : ${attractionPaging}">-->
+<!--        <div class="card">-->
+<!--            <div class="card-header" th:text="${attraction.id}">-->
+<!--            </div>-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-title" th:text="${attraction.name}"></h5>-->
+<!--                <span class="card-text" th:text="${attraction.location}"></span>-->
+<!--                <span class="card-text" th:text="${attraction.category}"></span>-->
+<!--                <br><br>-->
+<!--                <a th:href="@{/attractions/{id}(id=${attraction.id})}" class="btn btn-primary">상세보기</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <br>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash;페이징 처리&ndash;&gt;-->
+<!--<div th:if="${!attractionPaging.isEmpty()}">-->
+<!--    <ul class="pagination justify-content-center">-->
+<!--        <li class="page-item" th:classappend="${!attractionPaging.hasPrevious} ? 'disabled'">-->
+<!--            <a class="page-link" th:href="@{|?page=${attractionPaging.number-1}|}">-->
+<!--                <span>이전</span>-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <li th:each="page: ${#numbers.sequence(0, attractionPaging.totalPages-1)}"-->
+<!--            th:if="${page >= attractionPaging.number-5 and page <= attractionPaging.number+5}"-->
+<!--            th:classappend="${page == attractionPaging.number} ? 'active'"-->
+<!--            class="page-item">-->
+<!--            <a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}"></a>-->
+<!--        </li>-->
+<!--        <li class="page-item" th:classappend="${!attractionPaging.hasNext} ? 'disabled'">-->
+<!--            <a class="page-link" th:href="@{|?page=${attractionPaging.number+1}|}">-->
+<!--                <span>다음</span>-->
+<!--            </a>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</div>-->
+
+<!--<script src="/js/attraction.js"></script>-->
+
+</body>
+</html>

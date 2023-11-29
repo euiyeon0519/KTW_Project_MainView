@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>전체보기</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="p-5 mb-5 text-center</> bg-light">
+    <h1 class="mb-3">Kick The World</h1>
+    <h4 class="mb-3">게시판</h4>
+</div>
+
+<div class="container">
+    <button type="button" id="create-btn"
+            th:onclick="|location.href='@{/boards/create}'|"
+            class="btn btn-secondary btn-sm mb-3">등록</button>
+    <div class="row-6" th:each="board : ${boards}">
+        <div class="card">
+            <div class="card-header" th:text="${board.id}">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title" th:text="${board.title}"></h5>
+                <p class="card-text" th:text="${board.category}"></p>
+                <br><br>
+                <a th:href="@{/boards/{id}(id=${board.id})}" class="btn btn-primary">상세보기</a>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+
+<script src="/js/board.js"></script>
+</body>
